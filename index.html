@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Boyfriend's Day 💗</title>
+<title>Happy Boyfriend's Day, Maaz 💗</title>
 
 <style>
 * {
@@ -13,109 +13,70 @@
 }
 
 body {
+    font-family: "Poppins", Arial, sans-serif;
     min-height: 100vh;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
-    background: linear-gradient(135deg, #dff4ff, #f9e4f5, #e4f0ff);
-    color: #4b4250;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #dff6ff, #ffe6f2);
+    color: #4b4350;
 }
 
 /* Floating background hearts */
 .heart {
     position: fixed;
-    color: rgba(255, 160, 200, 0.55);
-    font-size: 22px;
-    animation: float 8s infinite ease-in-out;
+    bottom: -30px;
+    font-size: 20px;
+    animation: floatUp 8s linear infinite;
+    opacity: 0.6;
     pointer-events: none;
+    z-index: 0;
 }
 
-.heart:nth-child(1) { left: 8%; top: 20%; animation-delay: 0s; }
-.heart:nth-child(2) { left: 85%; top: 15%; animation-delay: 2s; }
-.heart:nth-child(3) { left: 15%; top: 75%; animation-delay: 4s; }
-.heart:nth-child(4) { left: 78%; top: 75%; animation-delay: 1s; }
-.heart:nth-child(5) { left: 50%; top: 10%; animation-delay: 3s; }
-
-@keyframes float {
-    0%, 100% {
+@keyframes floatUp {
+    0% {
         transform: translateY(0) rotate(0deg);
+        opacity: 0;
     }
-    50% {
-        transform: translateY(-25px) rotate(8deg);
+    15% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
     }
 }
 
-/* Clouds */
-.cloud {
-    position: fixed;
-    background: rgba(255,255,255,0.55);
-    border-radius: 50px;
-    width: 150px;
-    height: 45px;
-    filter: blur(1px);
-    opacity: 0.7;
-}
-
-.cloud::before,
-.cloud::after {
-    content: "";
-    position: absolute;
-    background: inherit;
-    border-radius: 50%;
-}
-
-.cloud::before {
-    width: 65px;
-    height: 65px;
-    left: 25px;
-    top: -25px;
-}
-
-.cloud::after {
-    width: 80px;
-    height: 80px;
-    right: 20px;
-    top: -35px;
-}
-
-.cloud1 {
-    top: 12%;
-    left: -30px;
-}
-
-.cloud2 {
-    bottom: 15%;
-    right: -35px;
-    transform: scale(0.8);
-}
-
-/* Main card */
+/* Main container */
 .container {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     padding: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .card {
-    width: min(92%, 600px);
-    max-height: 90vh;
-    overflow-y: auto;
-    padding: 35px 28px;
-    text-align: center;
+    width: 100%;
+    max-width: 650px;
+    min-height: 600px;
+    padding: 30px 22px;
     border-radius: 30px;
-    background: rgba(255,255,255,0.48);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border: 1px solid rgba(255,255,255,0.65);
-    box-shadow: 0 20px 60px rgba(120,100,140,0.15);
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 45px rgba(100,100,130,0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Slides */
 .slide {
     display: none;
-    animation: fadeIn 0.7s ease;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 0.6s ease;
 }
 
 .slide.active {
@@ -134,183 +95,141 @@ body {
 }
 
 h1 {
-    font-size: 34px;
-    margin-bottom: 15px;
-    color: #594b61;
+    font-size: 2rem;
+    color: #e875a7;
+    margin-bottom: 18px;
 }
 
 h2 {
-    font-size: 27px;
+    font-size: 1.6rem;
+    color: #db79a4;
     margin-bottom: 18px;
-    color: #594b61;
+}
+
+h3 {
+    font-size: 1.2rem;
+    color: #6d6070;
+    margin-bottom: 12px;
 }
 
 p {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.7;
     margin-bottom: 20px;
-}
-
-.subtitle {
-    font-size: 18px;
-    color: #756579;
 }
 
 /* Buttons */
 button {
     border: none;
-    padding: 13px 24px;
-    border-radius: 30px;
-    background: linear-gradient(135deg, #f5a9cb, #c9b6f5);
-    color: white;
-    font-size: 15px;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(190,140,190,0.25);
+    padding: 12px 22px;
+    margin: 7px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #f5a8c7, #9edcf3);
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-shadow: 0 6px 15px rgba(100,100,130,0.15);
     transition: 0.25s ease;
-    margin-top: 8px;
 }
 
 button:hover {
-    transform: translateY(-2px) scale(1.03);
+    transform: translateY(-3px) scale(1.02);
+}
+
+button:active {
+    transform: scale(0.97);
 }
 
 /* This or That */
 .choice-group {
-    margin: 18px 0;
-}
-
-.choice-title {
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-.choice-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.choice-buttons button {
-    margin: 0;
-    background: rgba(255,255,255,0.7);
-    color: #65566b;
-    box-shadow: none;
-    border: 1px solid rgba(220,180,215,0.6);
-}
-
-.choice-buttons button:hover {
-    background: rgba(255,255,255,0.95);
-}
-
-.reaction {
-    margin-top: 18px;
-    padding: 15px;
-    border-radius: 18px;
-    background: rgba(255,255,255,0.55);
-    min-height: 55px;
-    font-size: 15px;
-}
-
-/* Reasons */
-.reason {
-    opacity: 0;
-    margin: 12px 0;
-    padding: 13px;
-    border-radius: 18px;
-    background: rgba(255,255,255,0.5);
-    animation: reasonAppear 0.7s forwards;
-}
-
-.reason:nth-child(1) { animation-delay: 0.3s; }
-.reason:nth-child(2) { animation-delay: 0.8s; }
-.reason:nth-child(3) { animation-delay: 1.3s; }
-.reason:nth-child(4) { animation-delay: 1.8s; }
-.reason:nth-child(5) { animation-delay: 2.3s; }
-
-@keyframes reasonAppear {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    from {
-        opacity: 0;
-        transform: translateY(12px);
-    }
-}
-
-/* Promise cards */
-.promise {
-    padding: 15px;
-    margin: 11px 0;
-    border-radius: 18px;
-    background: rgba(255,255,255,0.52);
-}
-
-/* Timeline */
-.timeline {
-    text-align: left;
-    margin: 20px auto;
-    max-width: 450px;
-}
-
-.timeline-item {
-    padding: 15px 18px;
-    margin: 12px 0;
-    border-left: 4px solid #e6a9c8;
-    border-radius: 0 15px 15px 0;
-    background: rgba(255,255,255,0.5);
-}
-
-/* Memories */
-.memories {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
     margin: 20px 0;
 }
 
-.memory {
-    padding: 10px;
-    border-radius: 20px;
+.choice-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: #625563;
+}
+
+.reaction {
+    min-height: 25px;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #bd668f;
+    line-height: 1.5;
+}
+
+/* Lists */
+.list {
+    text-align: left;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.list p {
     background: rgba(255,255,255,0.55);
+    padding: 12px 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+/* Memories */
+.memory {
+    margin: 18px auto;
 }
 
 .memory img {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    max-width: 430px;
+    max-height: 430px;
     object-fit: cover;
-    border-radius: 15px;
-    display: block;
-    margin-bottom: 10px;
+    border-radius: 22px;
+    box-shadow: 0 8px 25px rgba(100,100,130,0.18);
 }
 
 .memory p {
-    font-size: 14px;
-    margin: 0;
+    margin-top: 8px;
+    margin-bottom: 0;
+    color: #a75d82;
+    font-weight: 600;
 }
 
 /* Song */
 .song-box {
     padding: 15px;
-    border-radius: 22px;
-    background: rgba(255,255,255,0.5);
-    margin: 20px 0;
 }
 
 .song-box iframe {
     width: 100%;
-    height: 180px;
+    max-width: 500px;
+    height: 280px;
     border: none;
-    border-radius: 15px;
+    border-radius: 20px;
 }
 
-/* Final heart */
-.big-heart {
-    font-size: 75px;
-    animation: heartbeat 1.3s infinite;
-    margin: 20px 0;
+/* Final message */
+.final-message {
+    text-align: left;
+    max-height: 450px;
+    overflow-y: auto;
+    padding: 5px 8px;
+}
+
+.final-message p {
+    margin-bottom: 17px;
+}
+
+.final-message strong {
+    color: #d66f9c;
+}
+
+/* Surprise */
+.surprise-heart {
+    font-size: 70px;
+    animation: heartbeat 1.2s infinite;
+    margin: 20px;
 }
 
 @keyframes heartbeat {
@@ -318,31 +237,97 @@ button:hover {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.15);
+        transform: scale(1.18);
     }
 }
 
-.small-note {
-    font-size: 13px;
-    opacity: 0.7;
-    margin-top: 12px;
+/* Final Muah screen */
+#muahScreen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #dff6ff, #ffe6f2);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    animation: finalFade 1s ease;
 }
 
-@media (max-width: 500px) {
+#muahScreen h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+#muahScreen p {
+    font-size: 1.3rem;
+    color: #c76791;
+}
+
+.final-heart {
+    position: absolute;
+    font-size: 25px;
+    animation: finalFloat 4s linear infinite;
+}
+
+@keyframes finalFloat {
+    from {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-20vh);
+        opacity: 0;
+    }
+}
+
+@keyframes finalFade {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .card {
+        min-height: 90vh;
+        padding: 25px 17px;
+        border-radius: 25px;
+    }
+
     h1 {
-        font-size: 29px;
+        font-size: 1.65rem;
     }
 
     h2 {
-        font-size: 24px;
+        font-size: 1.4rem;
     }
 
-    .card {
-        padding: 28px 20px;
+    p {
+        font-size: 0.92rem;
     }
 
-    .memories {
-        grid-template-columns: 1fr;
+    button {
+        font-size: 0.88rem;
+        padding: 11px 17px;
+    }
+
+    .song-box iframe {
+        height: 220px;
+    }
+
+    #muahScreen h1 {
+        font-size: 3rem;
     }
 }
 </style>
@@ -350,288 +335,559 @@ button:hover {
 
 <body>
 
-<div class="cloud cloud1"></div>
-<div class="cloud cloud2"></div>
+<!-- Background Music -->
+<audio id="backgroundMusic" loop autoplay>
+    <source src="background.mp3" type="audio/mpeg">
+</audio>
 
-<div class="heart">♡</div>
-<div class="heart">♡</div>
-<div class="heart">♡</div>
-<div class="heart">♡</div>
-<div class="heart">♡</div>
+<!-- Floating Hearts -->
+<div class="heart" style="left:8%; animation-delay:0s;">💗</div>
+<div class="heart" style="left:20%; animation-delay:2s;">🤍</div>
+<div class="heart" style="left:38%; animation-delay:4s;">💗</div>
+<div class="heart" style="left:58%; animation-delay:1s;">💕</div>
+<div class="heart" style="left:75%; animation-delay:3s;">🤍</div>
+<div class="heart" style="left:90%; animation-delay:5s;">💗</div>
 
 <div class="container">
+
 <div class="card">
 
 <!-- SLIDE 1 -->
-<section class="slide active">
+<div class="slide active">
+
     <h1>Happy Boyfriend's Day, Maaz 💗</h1>
-    <p class="subtitle">
-        I made a little something just for you…
+
+    <p>
+        I made a little something just for you… 🥹
     </p>
-    <button onclick="nextSlide()">Open My Heart 💗</button>
-</section>
+
+    <button onclick="startExperience()">
+        Open My Heart 💗
+    </button>
+
+</div>
+
 
 <!-- SLIDE 2 -->
-<section class="slide">
-    <h2>Little Surprise ✨</h2>
+<div class="slide">
+
+    <h2>Little Surprise 🥹</h2>
+
     <p>
         Okayyy… before you continue, just know that a little effort went into this. 🥹
         So take your time and enjoy it.
     </p>
+
     <button onclick="nextSlide()">Continue 💗</button>
-</section>
+
+</div>
+
 
 <!-- SLIDE 3 -->
-<section class="slide">
+<div class="slide">
+
     <h2>This or That? 👀</h2>
 
     <div class="choice-group">
-        <div class="choice-title">Long Drive 🚗 or Movie Date 🎬?</div>
-        <div class="choice-buttons">
-            <button onclick="reaction('drive')">Long Drive 🚗</button>
-            <button onclick="reaction('movie')">Movie Date 🎬</button>
+
+        <div class="choice-title">
+            Long Drive 🚗 vs Movie Date 🎬
         </div>
+
+        <button onclick="reaction('r1','Long Drive')">
+            Long Drive 🚗
+        </button>
+
+        <button onclick="reaction('r1','Movie Date')">
+            Movie Date 🎬
+        </button>
+
+        <div id="r1" class="reaction"></div>
+
     </div>
+
 
     <div class="choice-group">
-        <div class="choice-title">Text 💬 or Call 📞?</div>
-        <div class="choice-buttons">
-            <button onclick="reaction('text')">Text 💬</button>
-            <button onclick="reaction('call')">Call 📞</button>
+
+        <div class="choice-title">
+            Text 💬 vs Call 📞
         </div>
+
+        <button onclick="reaction('r2','Text')">
+            Text 💬
+        </button>
+
+        <button onclick="reaction('r2','Call')">
+            Call 📞
+        </button>
+
+        <div id="r2" class="reaction"></div>
+
     </div>
+
 
     <div class="choice-group">
-        <div class="choice-title">Cute Fight 😭 or No Fight 🫶?</div>
-        <div class="choice-buttons">
-            <button onclick="reaction('fight')">Cute Fight 😭</button>
-            <button onclick="reaction('nofight')">No Fight 🫶</button>
+
+        <div class="choice-title">
+            Cute Fight 😭 vs No Fight 🫶
         </div>
+
+        <button onclick="reaction('r3','Cute Fight')">
+            Cute Fight 😭
+        </button>
+
+        <button onclick="reaction('r3','No Fight')">
+            No Fight 🫶
+        </button>
+
+        <div id="r3" class="reaction"></div>
+
     </div>
+
 
     <div class="choice-group">
-        <div class="choice-title">Matching Outfit 👕 or Just Us 💗?</div>
-        <div class="choice-buttons">
-            <button onclick="reaction('matching')">Matching Outfit 👕</button>
-            <button onclick="reaction('justus')">Just Us 💗</button>
+
+        <div class="choice-title">
+            Matching Outfit 👕 vs Just Us 💗
         </div>
+
+        <button onclick="reaction('r4','Matching Outfit')">
+            Matching Outfit 👕
+        </button>
+
+        <button onclick="reaction('r4','Just Us')">
+            Just Us 💗
+        </button>
+
+        <div id="r4" class="reaction"></div>
+
     </div>
 
-    <div class="reaction" id="reactionBox">
-        Choose something above 👀
+
+    <!-- NEW 5TH PAIR -->
+    <div class="choice-group">
+
+        <div class="choice-title">
+            Cuddle 🤗 vs Kiss 💋
+        </div>
+
+        <button onclick="reaction('r5','Cuddle')">
+            Cuddle 🤗
+        </button>
+
+        <button onclick="reaction('r5','Kiss')">
+            Kiss 💋
+        </button>
+
+        <div id="r5" class="reaction"></div>
+
     </div>
+
 
     <button onclick="nextSlide()">Continue 💗</button>
-</section>
+
+</div>
+
 
 <!-- SLIDE 4 -->
-<section class="slide">
+<div class="slide">
+
     <h2>Why I Love You 💗</h2>
 
-    <div class="reason">
-        You make ordinary days feel special. ✨
-    </div>
+    <div class="list">
 
-    <div class="reason">
-        You somehow make me laugh at the most random things. 😂
-    </div>
+        <p>💗 You make ordinary days feel special.</p>
 
-    <div class="reason">
-        I love how you care about the little things. 🥹
-    </div>
+        <p>😂 You somehow make me laugh at the most random things.</p>
 
-    <div class="reason">
-        You make even the simplest conversations memorable. 💬
-    </div>
+        <p>🥹 I love how you care about the little things.</p>
 
-    <div class="reason">
-        And honestly… I just love the way you are. 🤍
+        <p>✨ You make even the simplest conversations memorable.</p>
+
+        <p>🤍 And honestly… I just love the way you are.</p>
+
     </div>
 
     <button onclick="nextSlide()">Continue 💗</button>
-</section>
+
+</div>
+
 
 <!-- SLIDE 5 -->
-<section class="slide">
+<div class="slide">
+
     <h2>Our Promises 🤍</h2>
 
-    <div class="promise">
-        Always support each other's dreams. ✨
-    </div>
+    <div class="list">
 
-    <div class="promise">
-        Never stay angry for too long. 🫶
-    </div>
+        <p>✨ Always support each other's dreams.</p>
 
-    <div class="promise">
-        Be there for each other's random rants. 😂
-    </div>
+        <p>🤍 Never stay angry for too long.</p>
 
-    <div class="promise">
-        Make ordinary days feel special. 🌷
-    </div>
+        <p>😂 Be there for each other's random rants.</p>
 
-    <div class="promise">
-        Keep choosing kindness and understanding. 🤍
-    </div>
+        <p>💗 Make ordinary days feel special.</p>
 
-    <div class="promise">
-        Keep the little memories close. 💗
-    </div>
+        <p>🫶 Keep choosing kindness and understanding.</p>
 
-    <button onclick="nextSlide()">Continue ✨</button>
-</section>
+        <p>🥹 Keep the little memories close.</p>
 
-<!-- SLIDE 6 -->
-<section class="slide">
-    <h2>A Little About Us 🌷</h2>
-
-    <div class="timeline">
-        <div class="timeline-item">
-            <b>It started with something small…</b>
-        </div>
-
-        <div class="timeline-item">
-            <b>Then came all the conversations. 💬</b>
-        </div>
-
-        <div class="timeline-item">
-            <b>And then came the memories. 💗</b>
-        </div>
     </div>
 
     <button onclick="nextSlide()">Continue 💗</button>
-</section>
+
+</div>
+
+
+<!-- SLIDE 6 -->
+<div class="slide">
+
+    <h2>A Little About Us 🥹</h2>
+
+    <p>
+        It started with something small… 💗
+    </p>
+
+    <p>
+        Then came all the conversations. 🤍
+    </p>
+
+    <p>
+        And then came the memories. ✨
+    </p>
+
+    <button onclick="nextSlide()">Continue 💗</button>
+
+</div>
+
 
 <!-- SLIDE 7 -->
-<section class="slide">
+<div class="slide">
+
     <h2>Our Memories 📸</h2>
 
-    <div class="memories">
+    <div class="memory">
 
-        <div class="memory">
-            <img src="memory1.jpg" alt="Our memory">
-            <p>The day it all started 💗</p>
-        </div>
+        <img src="memory1.jpg" alt="The day it all started">
 
-        <div class="memory">
-            <img src="memory2.jpg" alt="Our memory">
-            <p>One of my favorite pictures of you 🥹</p>
-        </div>
+        <p>The day it all started 💗</p>
 
     </div>
 
-    <p class="small-note">
-        Your pictures will be added here later ✨
-    </p>
 
-    <button onclick="nextSlide()">Continue 📸</button>
-</section>
+    <div class="memory">
+
+        <img src="memory2.jpg" alt="One of my favorite pictures of you">
+
+        <p>One of my favorite pictures of you 🥹</p>
+
+    </div>
+
+
+    <button onclick="nextSlide()">Continue 💗</button>
+
+</div>
+
 
 <!-- SLIDE 8 -->
-<section class="slide">
-    <h2>Our Song 🎶</h2>
+<div class="slide">
+
+    <h2>Our Song 🎵</h2>
 
     <p>
-        Some songs just feel a little more special when they remind you of someone. 🤍
+        A little song for our little moments. 🤍
     </p>
 
     <div class="song-box">
+
         <iframe
             src="https://www.youtube.com/embed/cQq6iLF66Gc"
             title="Our Song"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
         </iframe>
+
     </div>
 
     <button onclick="nextSlide()">Continue 💗</button>
-</section>
+
+</div>
+
 
 <!-- SLIDE 9 -->
-<section class="slide">
+<div class="slide">
+
     <h2>Wait… One Last Little Surprise 👀</h2>
 
-    <div class="big-heart">💗</div>
+    <div class="surprise-heart">
+        💗
+    </div>
 
     <p>
         You thought that was everything?
         Nope… there's still one more thing. 🥹
     </p>
 
-    <button onclick="nextSlide()">One Last Thing ✨</button>
-</section>
+    <button onclick="nextSlide()">
+        One Last Surprise 💗
+    </button>
+
+</div>
+
 
 <!-- SLIDE 10 -->
-<section class="slide">
-    <div class="big-heart">💗</div>
+<div class="slide">
 
     <h2>Happy Boyfriend's Day 🤍</h2>
 
-    <p>
-        Thank you for being a part of so many little moments and memories.
-        Here's to all the conversations, laughs and moments still waiting to happen. ✨
-    </p>
+    <div class="final-message">
 
-    <p>
-        You mean a lot to me, Sirji. 🥹💗
-    </p>
+        <p>
+            Thank you for being a part of so many little moments and memories.
+            Here's to all the conversations, laughs and moments still waiting to happen. ✨
+        </p>
 
-    <p class="small-note">
-        Made with a little bit of effort and a lot of love. 🤍
-    </p>
-</section>
+        <p>
+            And honestly… <strong>Alhamdulillah for the way we met</strong> —
+            so unexpectedly, yet somehow we ended up building such a beautiful bond.
+            I never really expected things to turn out this way, Maaz,
+            but I'm genuinely grateful for all the little conversations,
+            random talks, teasing, and all the memories we've made. 🤍
+        </p>
+
+        <p>
+            InshaAllah, I hope this bond always stays this beautiful and genuine.
+            Bas hamesha mere hi rehna… 😌💗 loyal rehna, caring rehna,
+            and always keep that respect and understanding between us.
+            Aur haan, Sirji, sirf mere saamne hi nahi,
+            dusron ke saath bhi achhe rehna.
+            That's something I really value. 🫶🏻
+        </p>
+
+        <p>
+            But before anything else,
+            <strong>I really want both of us to focus on our goals and careers first.</strong>
+            We have our own dreams to achieve, things to prove to ourselves,
+            and a future to build.
+            So right now, career comes first, Baby.
+            We should give our best to our studies, our goals and everything we're working towards. 🤍
+        </p>
+
+        <p>
+            And then, InshaAllah, when the right time comes,
+            we can think about everything that comes after.
+            Tab tak thoda sabr rakhna, apne goals pe focus karna,
+            and haan… <strong>thoda sa self-control bhi, Sirji.</strong> 😂🤍
+            Sometimes the right things just need the right time.
+        </p>
+
+        <p>
+            Aur ek chhoti si request…
+            <strong>seedhi raah pe rehna, Allah ke qareeb rehna,
+            aur apni life mein Islam ke raaste ko bhi pakad ke rakhna.</strong>
+            I genuinely hope we both keep growing,
+            keep becoming better versions of ourselves,
+            and trust Allah with whatever is written for us. 🤍✨
+        </p>
+
+        <p>
+            And yes… zyada shararat bhi nakko karna, Maaz. 😂👉🏻👈🏻
+            <br>
+            Thoda seedha-saadha rehna bhi seekho, Sirji. 😌
+        </p>
+
+        <p>
+            <strong>
+                Alhamdulillah for what we have,
+                and InshaAllah for whatever beautiful is written ahead. 🤍✨
+            </strong>
+        </p>
+
+        <p>
+            <strong>You mean a lot to me, Sirji. 🥹💗</strong>
+        </p>
+
+    </div>
+
+
+    <br>
+
+    <button onclick="showMuah()">
+        One Last Little Surprise 👀💗
+    </button>
+
+</div>
 
 </div>
 </div>
+
+
+<!-- FINAL MUAH SCREEN -->
+<div id="muahScreen">
+
+    <h1>Muah! 💋</h1>
+
+    <p>For you, Sirji. 🤍</p>
+
+</div>
+
 
 <script>
+
+/* =========================
+   SLIDE SYSTEM
+========================= */
+
 let currentSlide = 0;
+
 const slides = document.querySelectorAll(".slide");
 
 function nextSlide() {
-    slides[currentSlide].classList.remove("active");
 
-    currentSlide++;
+    if (currentSlide < slides.length - 1) {
 
-    if (currentSlide >= slides.length) {
-        currentSlide = slides.length - 1;
+        slides[currentSlide].classList.remove("active");
+
+        currentSlide++;
+
+        slides[currentSlide].classList.add("active");
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
     }
-
-    slides[currentSlide].classList.add("active");
 }
 
-function reaction(type) {
-    const box = document.getElementById("reactionBox");
 
-    const reactions = {
-        drive:
+/* =========================
+   BACKGROUND MUSIC
+========================= */
+
+const music = document.getElementById("backgroundMusic");
+
+music.volume = 0.35;
+
+
+/* Try autoplay when website opens */
+window.addEventListener("load", function() {
+
+    music.play().catch(function() {
+
+        console.log("Autoplay was blocked by the browser.");
+
+    });
+
+});
+
+
+/* Start music after first user tap */
+function startExperience() {
+
+    music.volume = 0.35;
+
+    music.play().catch(function() {
+
+        console.log("Music could not start.");
+
+    });
+
+    nextSlide();
+}
+
+
+/* =========================
+   THIS OR THAT REACTIONS
+========================= */
+
+const reactions = {
+
+    "Long Drive":
         "Ooooh, Long Drive? 🚗✨ Just driving around, talking about random things, listening to songs and enjoying the moment.",
 
-        movie:
+    "Movie Date":
         "Movie Date? 🎬🍿 Okayyy… snacks, a good movie and just enjoying the time together sounds pretty cute.",
 
-        text:
+    "Text":
         "Text? 👀 So you really like those random little messages throughout the day, huh? 😂💗",
 
-        call:
+    "Call":
         "Call? 📞 Awww… someone would rather hear the voice than just read the messages. 🥹",
 
-        fight:
+    "Cute Fight":
         "Cute Fight? 😭😂 A little teasing, arguing over silly things and then acting like nothing happened.",
 
-        nofight:
+    "No Fight":
         "No Fight? 🫶 Honestly, peaceful days with no unnecessary drama sound perfect.",
 
-        matching:
+    "Matching Outfit":
         "Matching outfits? 👕👀 Okayyy, someone wants the cute matching look.",
 
-        justus:
-        "Just Us? 💗 No fancy plans, no big occasion… just some simple time together."
-    };
+    "Just Us":
+        "Just Us? 💗 No fancy plans, no big occasion… just some simple time together.",
 
-    box.innerHTML = reactions[type];
+    /* NEW REACTIONS */
+
+    "Cuddle":
+        "Cuddle? 🥹🤍 Awww… someone just wants a little comfort, warmth and a long peaceful hug.",
+
+    "Kiss":
+        "Kiss? 👀😂 Okayyy Sirji… straight to the point, huh? 😭💗"
+
+};
+
+
+function reaction(id, choice) {
+
+    document.getElementById(id).innerText =
+        reactions[choice];
+
 }
+
+
+/* =========================
+   FINAL MUAH EFFECT
+========================= */
+
+function showMuah() {
+
+    const screen = document.getElementById("muahScreen");
+
+    screen.style.display = "flex";
+
+    createFinalHearts();
+
+}
+
+
+function createFinalHearts() {
+
+    const screen = document.getElementById("muahScreen");
+
+    for (let i = 0; i < 25; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.className = "final-heart";
+
+        heart.innerHTML =
+            ["💗","💕","🤍","💖","✨"][Math.floor(Math.random() * 5)];
+
+        heart.style.left =
+            Math.random() * 100 + "%";
+
+        heart.style.animationDelay =
+            Math.random() * 3 + "s";
+
+        heart.style.fontSize =
+            (18 + Math.random() * 25) + "px";
+
+        screen.appendChild(heart);
+    }
+
+}
+
 </script>
 
 </body>
-</html>
+    </html>
